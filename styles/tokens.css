@@ -1,0 +1,10 @@
+:root {
+  --carbon: #0B0D0F;
+  --ink: #11101A;
+  --stone: #6E6E6E;
+  --sand: #C8B895;
+  --olive: #8B744A;
+  --mist: #777735;
+  --sand-dim: rgba(200, 184, 149, 0.12);
+  --sand-border: rgba(200, 184, 149, 0.18);
+}

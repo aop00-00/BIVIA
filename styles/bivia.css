@@ -1,0 +1,74 @@
+/* BIVIA */
+#bivia {}
+
+.bivia-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bivia-headline {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.bivia-headline em {
+  font-style: normal;
+  color: var(--sand);
+}
+
+.bivia-desc {
+  color: var(--stone);
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 440px;
+  margin-bottom: 40px;
+}
+
+.bivia-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bivia-pillar {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 24px;
+  padding: 28px 0;
+  border-top: 1px solid var(--sand-border);
+  align-items: start;
+}
+
+.bivia-pillar:last-child {
+  border-bottom: 1px solid var(--sand-border);
+}
+
+.bivia-pillar-num {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  color: var(--mist);
+  letter-spacing: 0.15em;
+  padding-top: 4px;
+}
+
+.bivia-pillar-content h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.bivia-pillar-content p {
+  font-size: 14px;
+  color: var(--stone);
+  line-height: 1.7;
+}

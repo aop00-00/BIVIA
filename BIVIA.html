@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIVIA — Sistemas + Estrategia + Ejecución</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect fill='%230B0D0F' width='28' height='28'/%3E%3Crect x='2' y='2' width='5' height='22' fill='%23C8B895'/%3E%3Crect x='2' y='2' width='18' height='5' fill='%23C8B895'/%3E%3Crect x='19' y='19' width='8' height='8' fill='%238B744A'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- CDN Dependencies -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+    integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+    integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+    integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+
+  <!-- Estilos en orden de especificidad -->
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/hero.css" />
+  <link rel="stylesheet" href="styles/bivia.css" />
+  <link rel="stylesheet" href="styles/servicios.css" />
+  <link rel="stylesheet" href="styles/proyectos.css" />
+  <link rel="stylesheet" href="styles/bivia-lines.css" />
+  <link rel="stylesheet" href="styles/contacto.css" />
+  <link rel="stylesheet" href="styles/galeria.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#0B0D0F">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#0B0D0F" />
+      <rect x="80" y="80" width="14" height="60" fill="#C8B895" />
+      <rect x="80" y="80" width="50" height="14" fill="#C8B895" />
+      <rect x="116" y="126" width="20" height="20" fill="#8B744A" />
+      <text x="120" y="108" font-family="sans-serif" font-weight="700" font-size="28" fill="#C8B895"
+        letter-spacing="6">BIVIA</text>
+      <rect x="80" y="200" width="600" height="8" fill="#C8B895" opacity="0.8" />
+      <rect x="80" y="224" width="400" height="8" fill="#6E6E6E" opacity="0.5" />
+      <rect x="80" y="300" width="180" height="100" fill="#11101A" stroke="#C8B895" stroke-width="1" opacity="0.6" />
+      <rect x="280" y="300" width="180" height="100" fill="#11101A" stroke="#C8B895" stroke-width="1" opacity="0.6" />
+      <rect x="480" y="300" width="180" height="100" fill="#11101A" stroke="#C8B895" stroke-width="1" opacity="0.6" />
+    </svg>
+  </template>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect x="0" y="0" width="5" height="22" fill="#C8B895" />
+        <rect x="0" y="0" width="18" height="5" fill="#C8B895" />
+        <rect x="17" y="17" width="8" height="8" fill="#8B744A" />
+      </svg>
+      <span class="nav-wordmark">BIVIA</span>
+    </a>
+    <div class="nav-links">
+      <a href="#bivia">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <button class="nav-cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Iniciar
+      proyecto</button>
+  </nav>
+
+  <!-- Nav hide-on-scroll -->
+  <script src="components/nav.js"></script>
+
+  <div id="root"></div>
+
+  <!-- Globals: React hooks + GSAP plugin -->
+  <script type="text/babel" src="components/globals.jsx"></script>
+
+  <!-- Átomos -->
+  <script type="text/babel" src="components/Isotipo.jsx"></script>
+  <script type="text/babel" src="components/icons/IconDiagnostico.jsx"></script>
+  <script type="text/babel" src="components/icons/IconSistemas.jsx"></script>
+  <script type="text/babel" src="components/icons/IconAutomatizacion.jsx"></script>
+  <script type="text/babel" src="components/icons/IconEstrategia.jsx"></script>
+  <script type="text/babel" src="components/icons/IconDatos.jsx"></script>
+  <script type="text/babel" src="components/icons/IconIntegracion.jsx"></script>
+
+  <!-- Secciones (orden de aparición en la página) -->
+  <script type="text/babel" src="components/ParticleBackground.jsx"></script>
+  <script type="text/babel" src="components/Hero.jsx"></script>
+  <script type="text/babel" src="components/QueBivia.jsx"></script>
+  <script type="text/babel" src="components/BiviaLines.jsx"></script>
+  <script type="text/babel" src="components/Servicios.jsx"></script>
+  <script type="text/babel" src="components/Proyectos.jsx"></script>
+  <script type="text/babel" src="components/Contacto.jsx"></script>
+  <script type="text/babel" src="components/InfiniteGallery.jsx"></script>
+  <script type="text/babel" src="components/GaleriaSection.jsx"></script>
+  <script type="text/babel" src="components/Footer.jsx"></script>
+
+  <!-- Raíz: monta la app -->
+  <script type="text/babel" src="components/App.jsx"></script>
+
+</body>
+
+</html>

@@ -11,6 +11,42 @@ function Servicios() {
     return () => ctx.revert();
   }, []);
 
+  // 3D tilt on each card
+  useEffect(() => {
+    const cards = container.current ? container.current.querySelectorAll('.servicio-card') : [];
+    const cleanups = [];
+
+    cards.forEach(card => {
+      const onMove = (e) => {
+        const rect = card.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top  + rect.height / 2;
+        const dx = (e.clientX - cx) / (rect.width  / 2);
+        const dy = (e.clientY - cy) / (rect.height / 2);
+        gsap.to(card, {
+          rotateY:  dx * 8,
+          rotateX: -dy * 6,
+          scale: 1.025,
+          duration: 0.4,
+          ease: 'power2.out',
+          transformPerspective: 600,
+          transformOrigin: 'center center',
+        });
+      };
+      const onLeave = () => {
+        gsap.to(card, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.6, ease: 'elastic.out(1, 0.6)' });
+      };
+      card.addEventListener('mousemove', onMove);
+      card.addEventListener('mouseleave', onLeave);
+      cleanups.push(() => {
+        card.removeEventListener('mousemove', onMove);
+        card.removeEventListener('mouseleave', onLeave);
+      });
+    });
+
+    return () => cleanups.forEach(fn => fn());
+  }, []);
+
   const svcs = [
     { n: '01', Icon: IconDiagnostico, t: 'Diagnóstico estratégico', d: 'Analizamos tu negocio, procesos y ecosistema digital para definir el camino correcto desde el inicio.', tags: ['Auditoría', 'Roadmap', 'KPIs'] },
     { n: '02', Icon: IconSistemas, t: 'Diseño de sistemas', d: 'Arquitecturamos plataformas, procesos y flujos que escalan con tu crecimiento y se integran sin fricción.', tags: ['Arquitectura', 'UX/UI', 'APIs'] },

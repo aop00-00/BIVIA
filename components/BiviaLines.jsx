@@ -1,5 +1,6 @@
 // ── BIVIA LINES ──────────────────────────────────────────
 function BiviaLines() {
+  const wrapperRef = useRef(null);
   const sectionRef = useRef(null);
   const svgRef = useRef(null);
 
@@ -26,11 +27,10 @@ function BiviaLines() {
       p.style.strokeDashoffset = lengths[i];
     });
 
-    const progress = { v: 0 };
     const st = ScrollTrigger.create({
-      trigger: section,
-      start: 'top bottom',
-      end: 'bottom top',
+      trigger: wrapperRef.current,
+      start: 'top top',
+      end: 'bottom bottom',
       scrub: 0.8,
       onUpdate: self => {
         animated.forEach((p, i) => {
@@ -41,11 +41,38 @@ function BiviaLines() {
       },
     });
 
-    return () => st.kill();
+    // Mouse tilt: subtle 3D perspective shift on the SVG
+    const onMove = (e) => {
+      const rect = section.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top  + rect.height / 2;
+      const dx = (e.clientX - cx) / rect.width;
+      const dy = (e.clientY - cy) / rect.height;
+      gsap.to(svg, {
+        rotateX: -dy * 4,
+        rotateY:  dx * 6,
+        duration: 1.2,
+        ease: 'power2.out',
+        transformPerspective: 800,
+        transformOrigin: 'center center',
+      });
+    };
+    const onLeave = () => {
+      gsap.to(svg, { rotateX: 0, rotateY: 0, duration: 1.4, ease: 'power2.out' });
+    };
+    section.addEventListener('mousemove', onMove);
+    section.addEventListener('mouseleave', onLeave);
+
+    return () => {
+      st.kill();
+      section.removeEventListener('mousemove', onMove);
+      section.removeEventListener('mouseleave', onLeave);
+    };
   }, []);
 
   return (
-    <section id="bivia-lines" ref={sectionRef} style={{ padding: '80px 0', overflow: 'hidden', position: 'relative' }}>
+    <div ref={wrapperRef} style={{ position: 'relative', height: '250vh' }}>
+    <section id="bivia-lines" ref={sectionRef} style={{ padding: '80px 0', overflow: 'hidden', position: 'sticky', top: 0, height: '100vh' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', textAlign: 'center', marginBottom: '48px' }}>
 
         <h2 style={{ fontFamily: 'Sora,sans-serif', fontWeight: 700, fontSize: 'clamp(28px,3vw,44px)', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
@@ -99,5 +126,6 @@ function BiviaLines() {
         </svg>
       </div>
     </section>
+    </div>
   );
 }

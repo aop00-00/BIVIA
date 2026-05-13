@@ -1,6 +1,116 @@
 /* BIVIA */
 #bivia {}
 
+/* ── Portal reveal block ─────────────────────────────────────────────────── */
+.portal-reveal {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 48px 80px;
+  text-align: center;
+  border-bottom: 1px solid var(--sand-border);
+  margin-bottom: 100px;
+}
+
+.portal-letters {
+  display: flex;
+  gap: 0.12em;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 52px;
+}
+
+.portal-letter {
+  font-family: 'Sora', sans-serif;
+  font-weight: 300;
+  font-size: clamp(56px, 8vw, 120px);
+  letter-spacing: 0.08em;
+  color: #F2EFE8;
+  opacity: 0;
+  display: inline-block;
+  text-shadow:
+    0 0 80px rgba(200, 184, 149, 0.35),
+    0 2px 24px rgba(0, 0, 0, 0.9);
+}
+
+.portal-headline {
+  margin-bottom: 28px;
+}
+
+.portal-line {
+  display: block;
+  overflow: hidden;
+}
+
+.portal-line-inner {
+  display: block;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 3.8vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #F2EFE8;
+  transform: translateY(110%);
+}
+
+.portal-line-inner.portal-olive {
+  color: #8B7D3A;
+}
+
+.portal-sub {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--stone);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto 56px;
+  opacity: 0;
+}
+
+.portal-sub strong {
+  font-weight: 600;
+  color: #F2EFE8;
+}
+
+.portal-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(200, 184, 149, 0.15);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.portal-pillar {
+  padding: 20px 16px 8px;
+  border-right: 1px solid rgba(200, 184, 149, 0.15);
+  opacity: 0;
+}
+
+.portal-pillar:last-child { border-right: none; }
+
+.portal-pillar-num {
+  font-size: 10px;
+  font-weight: 600;
+  color: #8B7D3A;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+}
+
+.portal-pillar-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F2EFE8;
+  margin-bottom: 4px;
+}
+
+.portal-pillar-sub {
+  font-size: 11px;
+  color: var(--stone);
+  font-weight: 300;
+}
+
 .bivia-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

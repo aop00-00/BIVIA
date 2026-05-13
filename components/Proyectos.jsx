@@ -74,14 +74,6 @@ function Proyectos() {
       meta: { sector: 'Inmobiliario / Logística', tipo: 'Web + Dashboard', resultado: 'Visibilidad operativa total' }
     },
     {
-      url: 'https://www.malpe.com.mx',
-      bg: './uploads/Sitio-Malpe.png.png',
-      tag: 'SITIO WEB',
-      t: 'Presencia digital premium para una curtiduría certificada Gold LWG',
-      d: 'Sitio corporativo bilingüe para una curtiduría artesanal con más de 25 años en la industria. Posiciona a MALPE como proveedor premium de cuero para calzado, tapicería y marroquinería, respaldado por la certificación Gold del Leather Working Group —el estándar más alto de manufactura responsable a nivel mundial.',
-      meta: { sector: 'Industria del cuero', tipo: 'Sitio corporativo', certificación: 'LWG Gold' }
-    },
-    {
       url: 'https://www.pimed.com.mx',
       bg: './uploads/Ecosistema-educativo.png.png',
       tag: 'SITIO WEB · PLATAFORMA EDUCATIVA',

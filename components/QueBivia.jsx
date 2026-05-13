@@ -4,7 +4,41 @@ function QueBivia() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.fromTo('.section-label-bivia', { y: 20, opacity: 0 }, { scrollTrigger: { trigger: container.current, start: 'top 85%' }, y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
+
+      // ── Portal reveal: letras BIVIA + headline + sub + pillars ─────────────
+      // Se activan en cuanto la sección entra al viewport (justo tras pasar el portal)
+      const revealTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 92%',
+          toggleActions: 'play none none none',
+        },
+      });
+
+      revealTl
+        .fromTo('.portal-letter',
+          { opacity: 0, y: 28, scale: 0.84 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'back.out(1.4)', stagger: 0.09 },
+          0
+        )
+        .fromTo('.portal-line-inner',
+          { y: '110%' },
+          { y: '0%', duration: 0.7, ease: 'power3.out', stagger: 0.1 },
+          0.35
+        )
+        .fromTo('.portal-sub',
+          { y: 18, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.65, ease: 'power3.out' },
+          0.9
+        )
+        .fromTo('.portal-pillar',
+          { y: 14, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.12 },
+          1.1
+        );
+
+      // ── Resto de la sección ───────────────────────────────────────────────
+      gsap.fromTo('.section-label-bivia', { y: 20, opacity: 0 }, { scrollTrigger: { trigger: '.section-label-bivia', start: 'top 85%' }, y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
       gsap.fromTo('.bivia-headline', { y: 30, opacity: 0 }, { scrollTrigger: { trigger: '.bivia-headline', start: 'top 85%' }, y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
       gsap.fromTo('.bivia-desc', { y: 30, opacity: 0 }, { scrollTrigger: { trigger: '.bivia-desc', start: 'top 85%' }, y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
       gsap.fromTo('.bivia-stat-item', { y: 30, opacity: 0 }, { scrollTrigger: { trigger: '.bivia-stat-item', start: 'top 85%' }, y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' });
@@ -25,8 +59,47 @@ function QueBivia() {
     { n: '02', t: 'Sistemas', d: 'Diseñamos arquitecturas digitales que ordenan procesos, conectan datos y escalan sin fricciones.' },
     { n: '03', t: 'Ejecución', d: 'Convertimos ideas en productos reales. Código, diseño e implementación con estándares de clase mundial.' },
   ];
+  const headline = ['Digitalizamos', 'lo complejo.', 'Diseñamos estrategias', 'que generan'];
+
   return (
     <section id="bivia" ref={container}>
+
+      {/* ── Portal reveal — primer elemento visible tras pasar el portal ── */}
+      <div className="portal-reveal">
+        <div className="portal-letters">
+          {'BIVIA'.split('').map((l, i) => (
+            <span key={i} className="portal-letter">{l}</span>
+          ))}
+        </div>
+        <h1 className="portal-headline">
+          {headline.map((line, i) => (
+            <span className="portal-line" key={i}>
+              <span className="portal-line-inner">{line}</span>
+            </span>
+          ))}
+          <span className="portal-line">
+            <span className="portal-line-inner portal-olive">resultados reales.</span>
+          </span>
+        </h1>
+        <p className="portal-sub">
+          En <strong>BIVIA</strong> combinamos estrategia, creatividad y tecnología
+          para construir sistemas digitales que conectan visión con ejecución.
+        </p>
+        <div className="portal-pillars">
+          {[
+            { n: '01', t: 'ESTRATEGIA', s: 'Pensamos el negocio.' },
+            { n: '02', t: 'SISTEMAS',   s: 'Diseñamos la solución.' },
+            { n: '03', t: 'EJECUCIÓN',  s: 'Generamos resultados.' },
+          ].map(p => (
+            <div className="portal-pillar" key={p.n}>
+              <div className="portal-pillar-num">{p.n}</div>
+              <div className="portal-pillar-title">{p.t}</div>
+              <div className="portal-pillar-sub">{p.s}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="section-label section-label-bivia">02 — Qué es BIVIA</div>
       <div className="bivia-grid">
         <div>

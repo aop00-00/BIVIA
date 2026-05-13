@@ -58,14 +58,6 @@ function Proyectos() {
 
   const ps = [
     {
-      url: 'https://mt3arquitectos.com.mx',
-      bg: './uploads/Arquitectos.png',
-      tag: 'SITIO WEB',
-      t: 'Despacho de arquitectura contemporánea en León',
-      d: 'Sitio institucional diseñado para reflejar más de 20 años de trayectoria en proyectos con personalidad única. Desde residencias y naves industriales hasta diseño de muebles y remodelaciones, cada sección comunica su filosofía: romper estereotipos y construir espacios que se sienten propios.',
-      meta: { sector: 'Arquitectura', tipo: 'Sitio institucional', ubicación: 'León, Gto.' }
-    },
-    {
       url: 'https://www.quidamelo.com',
       bg: './uploads/Sitio-bodegas.png.png',
       tag: 'SITIO WEB · PLATAFORMA SAAS',

@@ -1,7 +1,22 @@
-/* PROYECTOS */
+/* PROYECTOS — white section */
 #proyectos {
   padding-left: 0;
   padding-right: 0;
+  background: #ffffff;
+  color: #0B0D0F;
+}
+
+#proyectos h2,
+#proyectos .section-label {
+  color: #0B0D0F;
+}
+
+#proyectos .section-label::before {
+  background: #0B0D0F;
+}
+
+#proyectos p {
+  color: #6E6E6E;
 }
 
 .proyectos-container {

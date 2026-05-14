@@ -1,0 +1,183 @@
+/* SKY SECTION ─────────────────────────────────────────────────────────── */
+
+/* Film grain — SVG feTurbulence overlay */
+.sky-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+}
+
+/* Card base — glass morphism */
+.sky-card {
+  flex-direction: column;
+  gap: 10px;
+  max-width: 340px;
+  padding: 28px 28px 24px;
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(28px) saturate(1.7);
+  -webkit-backdrop-filter: blur(28px) saturate(1.7);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 10px 52px rgba(8, 40, 110, 0.15),
+    0  2px 14px rgba(8, 40, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.sky-card--cta {
+  pointer-events: auto;
+}
+
+.sky-card--quote {
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.60);
+  padding: 34px 38px;
+}
+
+/* ── Labels ─────────────────────────────────────────────────────────────── */
+.sky-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #1255b5;
+}
+
+/* ── Stat card ──────────────────────────────────────────────────────────── */
+.sky-stat-val {
+  font-family: 'Sora', sans-serif;
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #092d74;
+}
+
+.sky-stat-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #1a58aa;
+}
+
+/* ── Project card ───────────────────────────────────────────────────────── */
+.sky-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: #1870d5;
+}
+
+.sky-proj-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #092d74;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sky-proj-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.58;
+  color: #2a5599;
+  margin: 0;
+}
+
+.sky-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.sky-pill {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #1255b5;
+  border: 1px solid rgba(18, 85, 181, 0.28);
+  padding: 4px 10px;
+  background: rgba(18, 85, 181, 0.06);
+}
+
+/* ── Quote card ─────────────────────────────────────────────────────────── */
+.sky-quote {
+  font-family: 'Sora', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: #092d74;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── CTA card ───────────────────────────────────────────────────────────── */
+.sky-cta-h {
+  font-family: 'Sora', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #092d74;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.sky-cta-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #2a5599;
+  margin: 0;
+}
+
+.sky-cta-btn {
+  margin-top: 10px;
+  background: #092d74;
+  color: #ffffff;
+  border: none;
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: fit-content;
+}
+
+.sky-cta-btn:hover {
+  background: #1255b5;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .sky-card {
+    max-width: 280px;
+    padding: 22px 22px 18px;
+  }
+  .sky-stat-val {
+    font-size: 56px;
+  }
+  .sky-cta-h {
+    font-size: 26px;
+  }
+  .sky-card--quote {
+    max-width: 300px;
+    padding: 24px 26px;
+  }
+  .sky-quote {
+    font-size: 15px;
+  }
+}

@@ -1,2 +1,4 @@
-/* GALERIA — layout inline en el componente */
-#galeria {}
+/* GALERIA — white section */
+#galeria {
+  background: #ffffff;
+}

@@ -1,5 +1,94 @@
-/* FORM */
-#contacto {}
+/* FORM — white section */
+#contacto {
+  background: #ffffff;
+  color: #0B0D0F;
+}
+
+#contacto h2,
+#contacto .section-label,
+#contacto .form-step-title {
+  color: #0B0D0F;
+}
+
+#contacto .section-label::before {
+  background: #0B0D0F;
+}
+
+#contacto .form-headline em {
+  color: #8B744A;
+}
+
+#contacto textarea,
+#contacto input[type=text],
+#contacto input[type=email],
+#contacto input[type=tel],
+#contacto select {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #0B0D0F;
+}
+
+#contacto textarea:focus,
+#contacto input:focus,
+#contacto select:focus {
+  border-color: #8B744A;
+}
+
+#contacto textarea::placeholder,
+#contacto input::placeholder {
+  color: #9E9E9E;
+}
+
+#contacto select option {
+  background: #ffffff;
+  color: #0B0D0F;
+}
+
+#contacto .option-card {
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #0B0D0F;
+}
+
+#contacto .option-card:hover,
+#contacto .option-card.selected {
+  border-color: #8B744A;
+  background: rgba(139, 116, 74, 0.06);
+}
+
+#contacto .option-pill {
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #0B0D0F;
+}
+
+#contacto .option-pill:hover,
+#contacto .option-pill.selected {
+  border-color: #8B744A;
+  background: rgba(139, 116, 74, 0.06);
+  color: #8B744A;
+}
+
+#contacto .form-progress {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+#contacto .form-step-dot {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+#contacto .btn-back {
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #6E6E6E;
+}
+
+#contacto .btn-back:hover {
+  border-color: #0B0D0F;
+  color: #0B0D0F;
+}
+
+#contacto .success-icon {
+  border-color: #8B744A;
+  color: #8B744A;
+}
 
 .form-wrapper {
   max-width: 860px;

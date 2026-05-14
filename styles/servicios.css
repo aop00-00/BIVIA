@@ -1,6 +1,26 @@
 /* SERVICIOS */
 #servicios {}
 
+/* Orbital node dot — active state */
+.svc-dot.active {
+  background: rgba(200, 184, 149, 0.15) !important;
+  border-color: rgba(200, 184, 149, 0.9) !important;
+  box-shadow: 0 0 20px 4px rgba(200, 184, 149, 0.35);
+}
+
+/* Core ping animation */
+@keyframes orbitPing {
+  0%   { transform: scale(1);   opacity: 0.5; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Override icon size inside orbital nodes */
+#servicios .servicio-icon {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 0;
+}
+
 .servicios-header {
   display: flex;
   justify-content: space-between;

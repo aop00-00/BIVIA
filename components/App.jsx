@@ -6,11 +6,9 @@ function App() {
       <Hero />
       <QueBivia />
       <BiviaLines />
-      <LightBurst />
       <Servicios />
-      <Proyectos />
-      <Contacto />
-      <GaleriaSection />
+      <SkySection />
+      {/* <Contacto /> */}
       <Footer />
     </>
   );

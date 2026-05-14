@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "browser-sync start --server --files \"*.html, styles/*.css, components/*.js\" --index BIVIA.html",
+    "dev": "browser-sync start --server --files \"*.html, styles/*.css, components/*.js, components/*.jsx\" --index BIVIA.html",
     "deploy": "vercel --prod"
   },
   "devDependencies": {
